@@ -54,7 +54,7 @@ attr_reader :id
     sql = <<-SQL
     SELECT * FROM students WHERE name = ?
     SQL
-    self.new(DB[:conn].execute(sql,name).first)
+    self.new_from_db(DB[:conn].execute(sql,name).first)
   end
 
 
